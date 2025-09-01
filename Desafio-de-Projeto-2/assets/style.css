@@ -1,0 +1,102 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul { list-style: none; padding-left: 5px; }
+a { color:blue; text-decoration: none;}
+.top-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+.bar {
+    background-color: #f9f9fb;
+    padding:15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+}
+.content {
+    max-width: 1440px;
+    margin: auto;
+    grid-gap: 3rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas: "sidebar main anchors";
+    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.footer {
+    min-height: 100px;
+    border-top: solid 1px #cdcdcd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+.anchors {
+    border-left: solid 1px #cdcdcd;
+    padding-left: 15px;
+    position: sticky;
+    top: 1rem;
+}
+.sidebar {
+    border-right: solid 1px #cdcdcd;
+    position: sticky;
+    top: 1rem;
+}
+figure {
+    text-align: center;
+}
+
+/* Grid areas for layout */
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.anchors { grid-area: anchors; }
+
+/* Article styles */
+h1 { margin: 1rem 0 0.5rem; }
+h2 { margin: 2rem 0 0.5rem; }
+p { line-height: 1.6; }
+
+/* Wikipedia-like infobox */
+.infobox {
+    float: right;
+    width: 320px;
+    border: 1px solid #cdcdcd;
+    background: #fafafa;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 0 0 1rem 1rem;
+}
+.infobox img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+.infobox h3 {
+    margin: 0.5rem 0 0.5rem;
+    text-align: center;
+}
+.infobox dl { margin: 0; }
+.infobox dt {
+    font-weight: 600;
+    color: #333;
+}
+.infobox dd {
+    margin: 0 0 0.5rem 0;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .content {
+        grid-template-areas:
+            "sidebar"
+            "main"
+            "anchors";
+        grid-template-columns: 1fr;
+    }
+    .infobox { float: none; width: 100%; margin: 0 0 1rem 0; }
+    .anchors, .sidebar { position: static; }
+}
